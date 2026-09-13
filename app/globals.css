@@ -1505,6 +1505,8 @@ button svg {
   inset: 0;
   width: 100%;
   height: 100%;
+  border: 14px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 / 18px / 0 stretch;
   z-index: 1;
   pointer-events: none;
   user-select: none;
@@ -1637,3 +1639,88 @@ button svg {
 .place-editor > .notice { margin-top: 1rem; }
 .place-editor > .remove-place { display:block; margin-top:1.25rem; padding:.5rem 0; color:#e6ad96; font-size:.875rem; text-decoration:underline; text-underline-offset:3px; }
 .place-editor > .remove-place:disabled { opacity:.45; cursor:not-allowed; }
+
+/* Shared spacing rhythm for the compact, framed interface. */
+:root {
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-6: 24px;
+}
+.repository-world { padding: 0 var(--ui-space-3) var(--ui-space-3); }
+.repository-world .topbar { padding: 0; gap: var(--ui-space-4); margin-bottom: var(--ui-space-3); }
+.repository-world .brand, .repository-world .topbar-right { gap: var(--ui-space-3); }
+.repository-world .repo-brand-label { margin-left: 0; }
+.repository-world .workspace { gap: var(--ui-space-3); --view-height: max(570px, calc(100dvh - 184px)); }
+.repository-world .repo-panel { padding: var(--ui-space-2); }
+.repository-world .repo-panel > [data-slot='tabs'] { gap: var(--ui-space-3); }
+.repository-world .repo-panel > [data-slot='tabs'] > [data-slot='tabs-list'] { height: 52px; gap: var(--ui-space-2); }
+.repository-world .repo-panel > [data-slot='tabs'] > [data-slot='tabs-list'] > [data-slot='tabs-trigger'] { height: 52px; padding: var(--ui-space-2); gap: var(--ui-space-2); }
+.repository-world .drive-top { top: 22px; left: 22px; right: 22px; gap: var(--ui-space-3); }
+.repository-world .drive-settings { top: 22px; right: 22px; }
+.repository-world .drive-tag, .repository-world .drive-settings summary { min-height: 48px; padding: var(--ui-space-2) var(--ui-space-3); gap: var(--ui-space-2); }
+.repository-world .drive-tag, .repository-world .drive-settings summary { height: 48px; font-size: 14px; line-height: 20px; }
+.repository-world .drive-settings[open] { padding: var(--ui-space-3); max-width: calc(100% - 44px); }
+.repository-world .drive-bottom { padding: 0 32px 32px; }
+.repository-world .drive-bottom .actions { gap: var(--ui-space-2); }
+.repository-world .drive-bottom .btn.icon { width: 48px; height: 48px; padding: 0; }
+.repository-world .chicken-control { gap: var(--ui-space-3); }
+.repository-world .chicken-control > .btn { min-height: 64px; padding: var(--ui-space-2) var(--ui-space-3); gap: var(--ui-space-3); }
+.repository-world .chicken-control > .chicken-add { min-height: 96px; text-align: left; white-space: normal; }
+.chicken-add-copy { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.chicken-add-title { display: flex; align-items: center; gap: 8px; font-size: 17px; }
+.repository-world .chicken-add-copy small { font-size: 13px; line-height: 1.4; }
+.repository-world .chicken-add-copy .chicken-queue-count { color: #ffd17e; }
+.chicken-add .chicken-button-icon { flex-shrink: 0; }
+.repository-world .crossing-status-panel { padding: var(--ui-space-2) var(--ui-space-3); gap: var(--ui-space-3); }
+.repository-world .repo-panel .live-chat { padding: var(--ui-space-3); }
+.repository-world .chat-heading { padding-bottom: var(--ui-space-3); gap: var(--ui-space-2); }
+.repository-world .live-chat .message { padding: var(--ui-space-4) 0; gap: var(--ui-space-3); }
+.repository-world .live-chat .messages { margin-bottom: var(--ui-space-3); }
+.repository-world .chat-compose { padding: var(--ui-space-1); gap: var(--ui-space-2); }
+.repository-world .chat-compose .btn { min-width: 44px; min-height: 44px; }
+.repository-world .chat-compose-meta { padding: var(--ui-space-2) var(--ui-space-1) 0; }
+.repository-world .place-editor, .repository-world .road-directory { padding: var(--ui-space-1) var(--ui-space-1) var(--ui-space-4); }
+.repository-world .place-editor > label { margin: 0 0 var(--ui-space-2); font-size: 14px; }
+.repository-world .place-editor input:not([type='checkbox']):not([type='color']), .repository-world .place-editor select, .repository-world .repo-search { min-height: 44px; padding: var(--ui-space-2) var(--ui-space-3); }
+.repository-world .repo-search { padding: 0 var(--ui-space-3); gap: var(--ui-space-2); }
+.repository-world .repo-search input { min-height: 42px; padding: var(--ui-space-2) 0; }
+.repository-world .customise-accordion { margin: var(--ui-space-4) 0; }
+.repository-world .customise-accordion [data-slot='accordion-trigger'] { min-height: 52px; padding: var(--ui-space-3); }
+.repository-world .customise-accordion [data-slot='accordion-content'] > div { padding: var(--ui-space-3) var(--ui-space-1) var(--ui-space-4); }
+.repository-world .place-preview { margin-top: 0; margin-bottom: var(--ui-space-4); }
+.repository-world .customise-accordion label { margin: var(--ui-space-4) 0 var(--ui-space-2); }
+.repository-world .customise-accordion .place-toggle { min-height: 36px; margin: var(--ui-space-2) 0; }
+.repository-world .building-choices { gap: var(--ui-space-2); }
+.repository-world .building-choice { padding: var(--ui-space-2) var(--ui-space-1); }
+.repository-world .building-choice span, .repository-world .place-editor .fine { font-size: 12px; }
+.repository-world .accent-choices { flex-wrap: wrap; gap: var(--ui-space-3); }
+.repository-world .place-add-actions { gap: var(--ui-space-2); }
+.repository-world .place-add-actions .btn { padding: var(--ui-space-2) var(--ui-space-3); }
+.repository-world .place-add-actions .icon { width: 52px; height: 52px; padding: 0; }
+.repository-world .place-editor > .notice { margin-top: var(--ui-space-4); padding: var(--ui-space-3); line-height: 1.5; }
+.repository-world .place-editor > .remove-place { margin-top: var(--ui-space-4); padding: var(--ui-space-2) 0; }
+.repository-world .road-directory .muted { margin-bottom: var(--ui-space-4); }
+.repository-world .road-table-head { padding: var(--ui-space-4) var(--ui-space-1) var(--ui-space-2); }
+.repository-world .road-repo-row { padding: var(--ui-space-3) var(--ui-space-1); gap: var(--ui-space-2); }
+.repository-world .road-pagination { padding: var(--ui-space-3) 0; gap: var(--ui-space-1); }
+.repository-world .footer { margin-top: var(--ui-space-3); padding: var(--ui-space-2) var(--ui-space-4); gap: var(--ui-space-3); }
+.repo-workflow-dialog, .welcome-dialog { padding: var(--ui-space-6); gap: var(--ui-space-4); }
+.repo-workflow-dialog .btn { min-height: 44px; padding: var(--ui-space-2) var(--ui-space-3); }
+.repo-workflow-dialog [data-slot='alert-dialog-title'] { font-size: 20px; color: #ffd395; }
+.repo-workflow-dialog [data-slot='alert-dialog-description'] { line-height: 1.65; }
+.header-volume-popup { padding: var(--ui-space-4); gap: var(--ui-space-4); }
+@media (max-width: 780px) {
+  .repository-world { padding: 0 var(--ui-space-2) var(--ui-space-2); }
+  .repository-world .topbar, .repository-world .brand, .repository-world .topbar-right { gap: var(--ui-space-2); }
+  .repository-world .drive-top { top: 22px; left: 22px; right: 22px; }
+  .repository-world .drive-settings { top: 22px; right: 22px; }
+  .repository-world .drive-settings[open] { max-width: calc(100% - 44px); }
+  .repository-world .drive-tag, .repository-world .drive-settings summary { min-height: 44px; padding: var(--ui-space-1) var(--ui-space-2); }
+  .repository-world .drive-tag, .repository-world .drive-settings summary { height: 44px; font-size: 12px; }
+  .repository-world .drive-bottom { padding: 0 24px 24px; }
+  .repository-world .drive-bottom .btn.icon { width: 44px; height: 44px; }
+  .repository-world .footer { flex-wrap: wrap; padding: var(--ui-space-2) var(--ui-space-3); }
+  .repo-workflow-dialog, .welcome-dialog { padding: var(--ui-space-4); }
+}

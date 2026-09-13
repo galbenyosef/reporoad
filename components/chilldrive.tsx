@@ -263,7 +263,7 @@ export default function RepoRoad() {
       /></RadioContext.Provider>
       {!broadcast && (
         <>
-          <img className="drive-art-frame" src="/art/drive-frame.webp" alt="" aria-hidden="true" />
+          <div className="drive-art-frame" aria-hidden="true" />
           <div className="drive-top">
             <span className="drive-tag" title={synced ? 'Shared live world' : 'Connecting to shared clock'}>
               <span /> {mode === 'live' ? 'LIVE' : 'PREVIEW'}
@@ -460,12 +460,15 @@ export default function RepoRoad() {
               <TabsTrigger value="style"><Plus /> Add</TabsTrigger>
             </TabsList>
             {tab === 'chat' && <div className="chicken-control">
-              <button className="btn" disabled={!chickens.schedule} onClick={chickens.add}><img className="chicken-button-icon" src="/icons/chicken.png" width={24} height={24} alt="" aria-hidden="true"/> Add chicken <Plus size={16} /></button>
-              <div className="crossing-status-panel">
-                <div><strong>{chickens.queued === null ? 'Connecting…' : `${chickens.queued.toLocaleString()} queued`}{chickens.pending ? ` · +${chickens.pending} sending` : ''}</strong>
-                <small>{chickens.crossing ? `${chickens.remaining.toLocaleString()} still to cross · timer starts on green` : chickens.waiting ? 'At the light · syncing crossing…' : `Next light in ${Math.floor(chickens.nextIn / 60)}:${String(chickens.nextIn % 60).padStart(2, '0')}`}</small></div>
+              <button className="btn chicken-add" aria-label="Add chicken" disabled={!chickens.schedule} onClick={chickens.add}>
+                <img className="chicken-button-icon" src="/icons/chicken.png" width={24} height={24} alt="" aria-hidden="true"/>
+                <span className="chicken-add-copy">
+                  <span className="chicken-add-title">Add chicken <Plus size={16} /></span>
+                  <small className="chicken-queue-count">{chickens.queued === null ? 'Connecting…' : `${chickens.queued.toLocaleString()} queued`}{chickens.pending ? ` · +${chickens.pending} sending` : ''}</small>
+                  <small>{!chickens.schedule ? 'Syncing next light…' : chickens.crossing ? `${chickens.remaining.toLocaleString()} still to cross · timer starts on green` : chickens.waiting ? 'At the light · syncing crossing…' : `Next light in ${Math.floor(chickens.nextIn / 60)}:${String(chickens.nextIn % 60).padStart(2, '0')}`}</small>
+                </span>
                 <span className="crossing-signal" aria-label={!chickens.schedule ? 'Crossing syncing' : chickens.crossing || chickens.waiting ? 'Red light' : 'Green light'} data-signal={!chickens.schedule ? 'pending' : chickens.crossing || chickens.waiting ? 'red' : 'green'}><i /><i /><i /></span>
-              </div>
+              </button>
               {chickens.error && <small role="status">{chickens.error}</small>}
             </div>}
             <div className="tab-body">
