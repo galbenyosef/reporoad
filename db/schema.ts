@@ -12,6 +12,12 @@ export const buildingSettings = sqliteTable('building_settings', {
   updatedBy: integer('updated_by').notNull(),
   updatedAt: integer('updated_at').notNull(),
 });
+export const removedPlaces = sqliteTable('removed_places', {
+  repositoryId: integer('repository_id').primaryKey(),
+  ownerId: integer('owner_id').notNull(),
+  removedBy: integer('removed_by').notNull(),
+  removedAt: integer('removed_at').notNull(),
+});
 export const roadRegistrations = sqliteTable('road_registrations', {
   name: text('name').primaryKey(),
   payload: text('payload'),

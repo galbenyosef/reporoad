@@ -4,6 +4,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Slider } from './ui/slider';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
+import { AlertDialog, AlertDialogContent, AlertDialogTitle, AlertDialogDescription } from './ui/alert-dialog';
 import { Download, Code2 as Github, Check, Plus, SlidersHorizontal } from 'lucide-react';
 import { Input } from './ui/input';
 import { NativeSelect, NativeSelectOption } from './ui/native-select';
@@ -43,6 +44,8 @@ export default function RepoEditor({ active = true }: { active?: boolean }) {
   const [yamlOpen,setYamlOpen] = useState(false);
   const [connectOpen,setConnectOpen] = useState(false);
   const [needsInstallation,setNeedsInstallation] = useState(false);
+  const [removeTarget,setRemoveTarget] = useState<string|null>(null);
+  const [removeError,setRemoveError] = useState('');
   useEffect(()=>{
     let stopped=false;
     const query=new URLSearchParams(window.location.search);
@@ -94,6 +97,19 @@ export default function RepoEditor({ active = true }: { active?: boolean }) {
       setMessage(settingsMode==='website'?'Saved! Your design is now on the shared road.':'File-managed settings restored. Website overrides have been removed.');
       window.dispatchEvent(new Event('reporoad:directory-updated'));
     } catch(error){setMessage(error instanceof Error?error.message:'Could not save. Your preview is still here.');}
+    finally{setBusy(false);}
+  }
+  async function removePlace() {
+    if(!removeTarget || busy)return;
+    setBusy(true);setRemoveError('');
+    try {
+      const response=await fetch(`/api/repositories/building?repository=${encodeURIComponent(removeTarget)}`,{method:'DELETE',signal:AbortSignal.timeout(30000)});
+      const data=await response.json() as {error?:string};
+      if(!response.ok)throw Error(data.error || 'Could not remove this place.');
+      setRemoveTarget(null);
+      setMessage('Removed from RepoRoad. Your GitHub repository is unchanged. You can add it again anytime.');
+      window.dispatchEvent(new Event('reporoad:directory-updated'));
+    }catch(error){setRemoveError(error instanceof Error?error.message:'Could not remove this place.');}
     finally{setBusy(false);}
   }
   function download() {
@@ -149,6 +165,16 @@ export default function RepoEditor({ active = true }: { active?: boolean }) {
       <button className="btn icon" aria-label="Add using a YAML file" title="Add using a YAML file" onClick={()=>setYamlOpen(true)}><Plus size={20}/></button>
     </div>
     {message && <p className="notice" role="status">{message}</p>}
+    {githubLogin && <button className="remove-place" disabled={busy || !validRepository} onClick={()=>{setRemoveError('');setRemoveTarget(validRepository);}}>Remove from RepoRoad…</button>}
+    <AlertDialog open={!!removeTarget} onOpenChange={open=>{if(!open && !busy)setRemoveTarget(null);}}>
+      <AlertDialogContent className="repo-workflow-dialog">
+        <AlertDialogTitle>Remove this place?</AlertDialogTitle>
+        <AlertDialogDescription>This removes {removeTarget} and its saved website design from RepoRoad. It does not delete or change the GitHub repository or its YAML file. Automatic discovery will not bring it back; you can add it again later.</AlertDialogDescription>
+        <button className="btn" disabled={busy} onClick={()=>setRemoveTarget(null)}>Cancel</button>
+        <button className="btn" disabled={busy} onClick={()=>void removePlace()}>{busy?'Removing…':'Remove from RepoRoad'}</button>
+        {removeError && <p className="notice" role="alert">{removeError}</p>}
+      </AlertDialogContent>
+    </AlertDialog>
     <Dialog open={yamlOpen} onOpenChange={setYamlOpen}>
       <DialogContent className="repo-workflow-dialog">
         <DialogTitle>Add with a repository file</DialogTitle>

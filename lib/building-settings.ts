@@ -1,4 +1,9 @@
 import { parseBuildingConfig, type Repository } from './repositories.ts';
+export async function visiblePlaces(db:D1Database,repos:Repository[]):Promise<Repository[]> {
+  const rows=await db.prepare('SELECT repository_id,owner_id FROM removed_places').all<{repository_id:number;owner_id:number}>();
+  const removed=new Map(rows.results.map(row=>[row.repository_id,row.owner_id]));
+  return repos.filter(repo=>!repo.githubId || removed.get(repo.githubId)!==repo.ownerId);
+}
 export async function applyWebsiteSettings(db:D1Database,repos:Repository[]):Promise<Repository[]> {
   if(!repos.length)return repos;
   const rows=await db.prepare('SELECT repository_id,owner_id,settings,updated_at FROM building_settings LIMIT 1000').all<{repository_id:number;owner_id:number;settings:string;updated_at:number}>();

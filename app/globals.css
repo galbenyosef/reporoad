@@ -1627,3 +1627,7 @@ button svg {
   .repository-world .drive-bottom .actions { gap: 6px; }
   .repository-world .footer { align-items: flex-start; padding: 8px 10px; }
 }
+/* Keep feedback clear of the textured action frame. */
+.place-editor > .notice { margin-top: 1rem; }
+.place-editor > .remove-place { display:block; margin-top:1.25rem; padding:.5rem 0; color:#e6ad96; font-size:.875rem; text-decoration:underline; text-underline-offset:3px; }
+.place-editor > .remove-place:disabled { opacity:.45; cursor:not-allowed; }

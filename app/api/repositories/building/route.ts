@@ -50,6 +50,30 @@ export async function POST(request:Request) {
       const result=await db.prepare('INSERT INTO building_settings(repository_id,owner_id,name,settings,updated_by,updated_at) SELECT ?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM building_settings)<1000 OR EXISTS(SELECT 1 FROM building_settings WHERE repository_id=?) ON CONFLICT(repository_id) DO UPDATE SET owner_id=excluded.owner_id,name=excluded.name,settings=excluded.settings,updated_by=excluded.updated_by,updated_at=excluded.updated_at').bind(metadata.id,metadata.owner.id,name,serializeBuildingConfig(building!),user.user_id,now,metadata.id).run();
       if(!result.meta.changes)return reply('Website design capacity reached.',503);
     }
+    await db.prepare('DELETE FROM removed_places WHERE repository_id=?').bind(metadata.id).run();
     return Response.json({ok:true,mode:input.mode},{headers:noStore});
   } catch {return reply('Could not verify GitHub permissions or save. Check the app installation, reconnect GitHub, and try again.',503);}
+}
+export async function DELETE(request:Request) {
+  const reply=(error:string,status:number)=>Response.json({error},{status,headers:noStore});
+  if(!sameOrigin(request))return reply('Remove from RepoRoad.',403);
+  const name=repositoryName(new URL(request.url).searchParams.get('repository'));
+  if(!name)return reply('Enter a public GitHub repository URL.',400);
+  try {
+    const user=await session(request);
+    if(!user)return reply('Sign in to GitHub before removing a place.',401);
+    const identity=await github('/user',user.token) as {id?:number};
+    if(identity.id!==user.user_id)return reply('Reconnect GitHub.',401);
+    const repo=await github(`/repos/${name}`,user.token) as {id:number;full_name:string;private:boolean;owner:{id:number};permissions?:{admin?:boolean}};
+    if(repositoryName(repo.full_name)!==name || !mayManageRepository(repo,user.user_id))
+      return reply('Only the public repository owner or an administrator can remove this place.',403);
+    const db=database();
+    // Atomic removal and durable opt-out: cached/YAML discovery cannot restore it.
+    await db.batch([
+      db.prepare('INSERT INTO removed_places(repository_id,owner_id,removed_by,removed_at) VALUES (?,?,?,?) ON CONFLICT(repository_id) DO UPDATE SET owner_id=excluded.owner_id,removed_by=excluded.removed_by,removed_at=excluded.removed_at').bind(repo.id,repo.owner.id,user.user_id,Date.now()),
+      db.prepare('DELETE FROM building_settings WHERE repository_id=?').bind(repo.id),
+      db.prepare('DELETE FROM road_registrations WHERE name=?').bind(name),
+    ]);
+    return Response.json({ok:true},{headers:noStore});
+  }catch{return reply('Could not verify GitHub access or remove the place. Reconnect GitHub and try again.',503);}
 }
