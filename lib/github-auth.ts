@@ -20,7 +20,7 @@ export function sameOrigin(request:Request) {
   return request.headers.get('origin') === new URL(request.url).origin;
 }
 export async function github(path:string, token:string) {
-  const response=await fetch(`https://api.github.com${path}`,{redirect:'error',signal:AbortSignal.timeout(10000),headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','User-Agent':'RepoRoad'}});
+  const response=await fetch(`https://api.github.com${path}`,{redirect:'manual',signal:AbortSignal.timeout(10000),headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','User-Agent':'RepoRoad'}});
   if(!response.ok) throw Error(response.status===401 ? 'GitHub session expired. Connect again.' : 'GitHub could not verify access. Check the app installation and try again.');
   return response.json();
 }

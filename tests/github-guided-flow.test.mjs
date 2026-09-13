@@ -40,7 +40,7 @@ test('callback validates state, rejects missing/tampered cookies, and establishe
   const secret=randomToken(), state=randomToken();
   globalThis.__githubTest={secrets:{session:secret,client:'test-secret'},writes:0};
   const value=await seal({state,verifier:randomToken(),expires:Date.now()+600000},secret,'github-oauth');
-  globalThis.fetch=async()=>Response.json({access_token:'ghu_test',expires_in:3600});
+  globalThis.fetch=async(url,options)=>{assert.equal(options.redirect,'manual');return Response.json({access_token:'ghu_test',expires_in:3600});};
   const request=(cookie='',s=state)=>new Request('https://reporoad.org/api/github/callback?code=test-code&state='+s,{headers:{cookie}});
   try {
     assert.match((await GET(request())).headers.get('location'),/reason=oauth_cookie_missing/);
@@ -50,6 +50,9 @@ test('callback validates state, rejects missing/tampered cookies, and establishe
     const success=await GET(request('__Host-reporoad-oauth='+value));
     assert.match(success.headers.get('location'),/github=connected/);
     assert.match(success.headers.get('set-cookie'),/__Host-reporoad-github=/);
+    assert.equal(globalThis.__githubTest.writes,3);
+    globalThis.fetch=async()=>new Response(null,{status:302,headers:{Location:'https://evil.test'}});
+    assert.match((await GET(request('__Host-reporoad-oauth='+value))).headers.get('location'),/reason=token_redirect_refused/);
     assert.equal(globalThis.__githubTest.writes,3);
     globalThis.fetch=async()=>Response.json({error:'bad_verification_code'});
     assert.match((await GET(request('__Host-reporoad-oauth='+value))).headers.get('location'),/reason=token_response/);
