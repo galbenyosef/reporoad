@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState, type SubmitEvent } from 'react';
-import { Send } from 'lucide-react';
+import { Send, ChevronRight } from 'lucide-react';
 type Message = { id: number; name: string; body: string; createdAt: number };
 export default function LiveChat({ online }: { online: number | null }) {
   const [signedIn, setSignedIn] = useState(false);
@@ -101,6 +101,8 @@ export default function LiveChat({ online }: { online: number | null }) {
         ) : (
           messages.map((m) => (
             <article key={m.id} className="message">
+              <span className="chat-initial" aria-hidden="true">{m.name.trim().slice(0, 1).toUpperCase() || '?'}</span>
+              <div className="chat-message-copy">
               <div>
                 <strong>{m.name}</strong>
                 <time dateTime={new Date(m.createdAt).toISOString()}>
@@ -111,11 +113,12 @@ export default function LiveChat({ online }: { online: number | null }) {
                 </time>
               </div>
               <p>{m.body}</p>
+              </div>
             </article>
           ))
         )}
       </div>
-      {!signedIn ? <a className="chat-sign-in" href={signInUrl} target="_top">Sign in to say hello…</a> : <form onSubmit={send}>
+      {!signedIn ? <a className="chat-sign-in" href={signInUrl} target="_top"><span>Sign in to say hello…</span><ChevronRight size={24} /></a> : <form onSubmit={send}>
         <label htmlFor="chat-message" className="sr-only">
           Chat message
         </label>

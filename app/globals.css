@@ -210,6 +210,7 @@ button svg {
 .brand svg {
   color: var(--primary);
 }
+.brand-logo { display: block; flex-shrink: 0; object-fit: contain; }
 .topbar-right,
 .row,
 .actions {
@@ -1037,9 +1038,9 @@ button svg {
 .welcome-dialog { background: #211d19; color: var(--foreground); border: 1px solid var(--border); padding: 28px; gap: 18px; }
 .welcome-dialog [data-slot="dialog-title"] { font-size: 1.35rem; padding-right: 22px; }
 .welcome-dialog [data-slot="dialog-description"] { font-size: 1rem; line-height: 1.65; color: #d1c5b3; }
-.repository-world .workspace { grid-template-columns: minmax(0, 1fr) 280px; gap: 12px; align-items: stretch; }
+.repository-world .workspace { --view-height: max(430px, calc(100dvh - 186px)); grid-template-columns: minmax(0, 1fr) 280px; gap: 12px; align-items: stretch; }
 .repository-world .workspace > section { position: relative; display: flex; flex-direction: column; gap: 14px; }
-.repository-world .drive { height: max(430px, calc(100dvh - 186px)); border: 1px solid var(--border); border-radius: 9px; }
+.repository-world .drive { height: var(--view-height); flex-shrink: 0; border: 1px solid var(--border); border-radius: 9px; }
 .repository-world .drive-top { top: 15px; left: 15px; justify-content: flex-start; }
 .repository-world .drive-tag { display: flex; align-items: center; gap: 8px; background: #1b1715e8; border: 1px solid #ed6157; color: #ff7064; border-radius: 30px; padding: 6px 12px; letter-spacing: .4px; }
 .drive-tag > span { width: 8px; height: 8px; border-radius: 50%; background: #ff6257; }
@@ -1081,7 +1082,7 @@ button svg {
 @media (max-width: 600px) { .radio:has(.sound-enable) { flex-wrap: wrap; } .radio:has(.sound-enable) .radio-text { flex-basis: 55%; } }
 .repository-world .volume { width: 135px; display: flex; align-items: center; gap: 12px; }
 .volume > svg { flex-shrink: 0; color: #c3bcb2; }
-.repository-world .repo-panel { border-radius: 9px; background: #1d1916; align-self: stretch; height: max(514px, calc(100dvh - 102px)); padding: 10px; }
+.repository-world .repo-panel { border-radius: 9px; background: #1d1916; align-self: stretch; height: var(--view-height); min-height: 0; padding: 10px; }
 .repo-panel > [data-slot='tabs'] { height: 100%; gap: 12px; }
 .repo-panel [data-slot='tabs-list'] { width: 100%; height: 42px; padding: 0; background: transparent; flex-shrink: 0; }
 .repo-panel [data-slot='tabs-trigger'] { border: 1px solid var(--border); border-radius: 7px; font-size: 14px; height: 42px; color: var(--foreground); }
@@ -1095,7 +1096,7 @@ button svg {
 .chat-heading strong { font-size: 13px; color: var(--muted-foreground); font-weight: 400; }
 .chat-heading .pill { border: 0; padding: 0; font-size: 12px; color: #c5bdb4; letter-spacing: 0; white-space: nowrap; }
 .chat-heading .pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #a8d774; }
-.live-chat .messages { height: auto; flex: 1; min-height: 160px; margin: 0 0 12px; }
+.live-chat .messages { height: auto; flex: 1; min-height: 0; margin: 0 0 12px; }
 .live-chat .message { border: 0; padding: 13px 2px 2px; }
 .message strong { color: #e3bd75; font-size: 13px; }
 .message:nth-child(3n + 2) strong { color: #dba5c8; }
@@ -1219,3 +1220,410 @@ button svg {
 .repo-submit { display: grid; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #514535; }
 .repo-submit label { font-size: 14px; font-weight: 600; }
 .repo-submit p { margin: 0; }
+.repo-url-error { color: #f0ac92; font-size: 14px; line-height: 1.5; margin: 8px 0 0; }
+.customise-accordion { margin: 16px 0; border: 0; }
+.customise-accordion [data-slot='accordion-item'] { border: 0; }
+.customise-accordion [data-slot='accordion-trigger'] { min-height: 54px; padding: 14px 16px; align-items: center; gap: 16px; color: #efd5ad; font-size: 16px; line-height: 24px; border: 1px solid #57432f; border-radius: 4px; background: #1c1814; text-decoration: none; }
+.customise-accordion [data-slot='accordion-trigger']:hover { background: #241e17; border-color: #876441; text-decoration: none; }
+.customise-accordion [data-slot='accordion-trigger-icon'] { flex-shrink: 0; color: #bfa98b; }
+.customise-label { display: flex; align-items: center; gap: 12px; }
+.customise-label svg { flex-shrink: 0; color: #d3ad75; }
+.customise-accordion [data-slot='accordion-content'] { overflow: hidden; }
+.customise-accordion [data-slot='accordion-content'] > div { padding: 12px 4px 16px; }
+.customise-accordion label { display: block; margin: 16px 0 8px; font-size: 14px; }
+.customise-accordion .place-toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.place-add-actions { display: grid; grid-template-columns: minmax(0, 1fr) 52px; gap: 10px; }
+.place-add-actions .btn { min-height: 52px; }
+.repo-workflow-dialog { background: #1b1713; color: #f4ede1; border: 3px solid #715033; padding: 26px; gap: 16px; max-height: calc(100dvh - 40px); overflow-y: auto; }
+.repo-workflow-dialog [data-slot='dialog-title'] { padding-right: 24px; font-size: 20px; color: #ffd395; }
+.repo-workflow-dialog [data-slot='dialog-description'] { color: #c7baaa; font-size: 15px; line-height: 1.65; }
+.repo-workflow-dialog label { font-size: 14px; }
+.repo-workflow-dialog .btn { background: #282019; border: 2px solid #6a4b30; color: #f3dfbf; }
+.repo-workflow-dialog .btn.primary { background: #9a672a; border-color: #d2a360; color: #fff0d4; }
+.repo-workflow-dialog .notice { margin: 0; padding: 12px; font-size: 14px; line-height: 1.5; }
+.github-steps { display: grid; gap: 8px; padding: 12px; margin: 0; list-style: none; border: 1px solid #54412e; }
+.github-steps li { display: flex; align-items: center; gap: 8px; color: #ae9f8b; font-size: 14px; }
+.github-steps li[data-current='true'] { color: #ffd395; }
+/* Framed instruments and warm metalwork around the live road. */
+:root, .dark {
+  --background: #141210;
+  --foreground: #f4ede1;
+  --primary: #ffc365;
+  --primary-foreground: #24170b;
+  --muted: #28221c;
+  --muted-foreground: #bdb1a3;
+  --border: #4a392a;
+}
+.repository-world {
+  --plate: linear-gradient(135deg, #29231e, #171615 65%, #111110);
+  --plate-edge: inset 0 2px 0 #ffffff0d, inset 0 -3px 0 #0009, 0 3px 0 #080807;
+  max-width: 2048px;
+  padding: 0 18px 14px;
+  background: radial-gradient(ellipse at 25% 0, #6e401822, transparent 55%), #141210;
+}
+.repository-world .topbar {
+  height: 100px;
+  margin-bottom: 16px;
+  border-bottom: 5px ridge #4e3b2b;
+  gap: 20px;
+}
+.repository-world .brand { gap: 12px; min-width: 0; }
+.repository-world .brand-logo { width: 68px; height: 68px; border-radius: 6px; }
+.repository-world .brand h1 {
+  color: #ffd38a;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(26px, 2.8vw, 44px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-shadow: 0 2px #9a642b, 0 4px #412716, 3px 5px #080706;
+}
+.repository-world .repo-brand-label {
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: .1px;
+  padding: 16px 20px;
+  margin-left: 4px;
+  border: 2px solid #40342a;
+  background: var(--plate);
+  box-shadow: var(--plate-edge);
+}
+.repository-world .header-note {
+  max-width: 180px;
+  padding: 12px 16px;
+  color: #f2c87f;
+  background: var(--plate);
+  border: 2px solid #493626;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: var(--plate-edge);
+}
+.repository-world .topbar-right { gap: 10px; }
+.repository-world .btn, .repository-world .repo-panel [data-slot='tabs-trigger'] {
+  border: 2px solid #5b4430;
+  border-top-color: #806044;
+  border-radius: 4px;
+  background: var(--plate);
+  color: #f4e8d4;
+  box-shadow: var(--plate-edge);
+  transition: border-color .15s, background .15s, color .15s;
+}
+.repository-world .btn:hover, .repository-world .repo-panel [data-slot='tabs-trigger']:hover {
+  border-color: #bd8843;
+  background: linear-gradient(135deg, #463323, #241c16);
+}
+.repository-world .btn:active { box-shadow: inset 0 3px 5px #0008; }
+.repository-world .btn:disabled { opacity: .5; }
+.repository-world .btn.primary,
+.repository-world .place-export .primary {
+  background: linear-gradient(135deg, #cc8d34, #885520);
+  border-color: #eab663 #a06b32 #684321;
+  color: #fff2d0;
+  box-shadow: inset 0 2px #ffdc8a8c, inset 0 -3px #5c381c, 0 3px #080706;
+}
+.repository-world .topbar-right > .icon { width: 54px; height: 54px; color: #eadac1; }
+.repository-world .workspace {
+  --view-height: max(550px, calc(100dvh - 192px));
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+}
+.repository-world .drive, .repository-world .repo-panel {
+  height: var(--view-height);
+  border: 9px ridge #513c2b;
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px #080808, 0 6px 16px #0008, inset 0 0 0 1px #91623c;
+}
+.repository-world .repo-panel {
+  background: linear-gradient(110deg, #201d19, #141413);
+  padding: 12px;
+  min-width: 0;
+}
+.repository-world .repo-panel > [data-slot='tabs'] { gap: 14px; min-height: 0; }
+.repository-world .repo-panel > [data-slot='tabs'] > [data-slot='tabs-list'] { height: 56px; gap: 6px; }
+.repository-world .repo-panel > [data-slot='tabs'] > [data-slot='tabs-list'] > [data-slot='tabs-trigger'] {
+  height: 56px;
+  padding: 10px 8px;
+  font-size: 16px;
+  gap: 8px;
+}
+.repository-world .repo-panel [data-slot='tabs-trigger'] svg { width: 19px; height: 19px; }
+.repository-world .chicken-control { padding: 0; border: 0; gap: 12px; }
+.repository-world .chicken-control > .btn { min-height: 76px; gap: 16px; font-size: 18px; }
+.repository-world .chicken-button-icon { width: 42px; height: 42px; object-fit: contain; }
+.crossing-status-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--plate);
+  border: 2px solid #4c3928;
+  box-shadow: var(--plate-edge);
+}
+.crossing-status-panel strong { color: #ffd17e; font-size: 16px; }
+.repository-world .crossing-status-panel small { display: block; margin-top: 5px; font-size: 14px; line-height: 1.4; }
+.crossing-signal { display: grid; gap: 4px; padding: 6px; border: 2px ridge #716451; background: #0a0c09; flex-shrink: 0; }
+.crossing-signal i { display: block; width: 10px; height: 10px; border-radius: 50%; background: #34342b; }
+.crossing-signal[data-signal='red'] i:first-child { background: #ff5b51; box-shadow: 0 0 6px #f74a47; }
+.crossing-signal[data-signal='pending'] i:nth-child(2) { background: #eab550; }
+.crossing-signal[data-signal='green'] i:last-child { background: #a4db65; box-shadow: 0 0 6px #98d763; }
+.repository-world .repo-panel .live-chat {
+  padding: 12px;
+  border: 2px solid #48382b;
+  background: linear-gradient(130deg, #1e1c19, #111212);
+  box-shadow: inset 0 1px #ffffff08;
+  min-height: 0;
+}
+.repository-world .chat-heading { padding: 0 0 14px; gap: 8px; flex-wrap: wrap; flex-shrink: 0; }
+.repository-world .chat-heading strong { font-size: 16px; color: #d5cabc; }
+.repository-world .chat-heading .pill { font-size: 14px; }
+.repository-world .chat-heading .pill::before { width: 10px; height: 10px; box-shadow: 0 0 8px #a8d77433; }
+.repository-world .live-chat .message { display: flex; align-items: flex-start; gap: 12px; padding: 18px 0; border-bottom: 1px solid #ffffff08; }
+.chat-initial {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  height: 40px;
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 800;
+  color: #ffe2a3;
+  background: linear-gradient(135deg, #78512f, #332b21);
+  border: 2px ridge #a37b48;
+}
+.repository-world .message:nth-child(3n + 2) .chat-initial { background: #423d33; border-color: #aa9981; }
+.repository-world .message:nth-child(3n) .chat-initial { background: #293e30; border-color: #648354; }
+.repository-world .message > .chat-message-copy { display: block; flex: 1; min-width: 0; }
+.chat-message-copy > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 8px; }
+.repository-world .message strong { color: #ffd17e; font-size: 15px; overflow-wrap: anywhere; }
+.repository-world .message p { font-size: 16px; }
+.repository-world .message time { font-size: 12px; }
+.repository-world .chat-sign-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; border: 2px solid #806043; border-radius: 3px; padding: 0 0 0 12px; min-height: 56px; flex-shrink: 0; font-size: 15px; background: var(--plate); }
+.repository-world .chat-sign-in svg { box-sizing: content-box; padding: 14px 10px; background: linear-gradient(135deg, #c88b38, #82521f); color: #ffe7ad; border-left: 2px solid #b18a4d; flex-shrink: 0; }
+.repository-world .chat-compose { border: 2px solid #806043; border-radius: 3px; background: #141414; }
+.repository-world .chat-compose .btn { background: linear-gradient(135deg, #c88b38, #82521f); color: #ffe7ad; }
+.repository-world .live-chat form { flex-shrink: 0; }
+.repository-world .drive-top { top: 18px; left: 18px; }
+.repository-world .drive-tag { border: 3px ridge #a64935; border-radius: 2px; background: #271b16ed; padding: 8px 13px; color: #ff6560; font-size: 17px; box-shadow: 0 3px 0 #130d09; }
+.repository-world .drive-settings { top: 18px; right: 18px; }
+.repository-world .drive-settings summary { display: flex; align-items: center; gap: 10px; border: 3px ridge #785333; border-radius: 3px; background: #201b15f5; padding: 10px 12px; color: #ffcf79; font-size: 14px; box-shadow: 0 3px #130e0a; list-style: none; }
+.repository-world .drive-settings summary::-webkit-details-marker { display: none; }
+.repository-world .drive-settings[open] summary > svg:last-child { transform: rotate(90deg); }
+.repository-world .drive-bottom { padding: 16px; }
+.repository-world .drive-bottom .btn.icon { height: 52px; width: 52px; border: 4px ridge #86603a; color: #ffbf57; background: #231b12ee; }
+.repository-world .footer { margin-top: 16px; padding: 8px 14px; border: 3px ridge #483829; background: var(--plate); gap: 12px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-brand img { border-radius: 3px; }
+.footer-brand strong { color: #ffcc79; font-size: 20px; }
+.footer-brand > span { font-size: 12px; }
+.repository-world .place-editor h2, .repository-world .road-directory h2 { color: #ffd18a; }
+.repository-world .place-editor input, .repository-world .place-editor select, .repository-world .repo-search { background-color: #171614; border-color: #715438; border-radius: 3px; }
+.repository-world .road-repo-name strong { font-size: 14px; }
+.repository-world .road-repo-name small, .repository-world .road-stars, .repository-world .road-table-head, .repository-world .road-pagination > small { font-size: 12px; }
+.repository-world .road-pagination button[aria-current='page'] { background: #d39b47; color: #21170c; }
+.repository-world .reset-place { font-size: 14px; }
+@media (min-width: 1700px) { .repository-world .workspace { grid-template-columns: minmax(0, 1fr) 400px; } }
+@media (max-width: 1200px) {
+  .repository-world .repo-brand-label, .repository-world .header-note { display: none; }
+  .repository-world .workspace { grid-template-columns: minmax(0, 1fr) 330px; gap: 12px; }
+  .repository-world .repo-panel { padding: 8px; border-width: 6px; }
+}
+@media (max-width: 780px) {
+  .repository-world { padding: 0 10px 12px; }
+  .repository-world .topbar { height: 78px; margin-bottom: 12px; gap: 8px; }
+  .repository-world .brand { gap: 7px; }
+  .repository-world .brand-logo { width: 46px; height: 46px; }
+  .repository-world .brand h1 { font-size: 26px; }
+  .repository-world .topbar-right { gap: 6px; }
+  .repository-world .topbar-right > .icon { width: 42px; height: 42px; }
+  .repository-world .workspace { grid-template-columns: minmax(0, 1fr); }
+  .repository-world .drive { height: auto; aspect-ratio: 16 / 10; border-width: 5px; }
+  .repository-world .repo-panel { height: 600px; }
+  .repository-world .drive-top { top: 8px; left: 8px; }
+  .repository-world .drive-tag { font-size: 13px; padding: 5px 8px; }
+  .repository-world .drive-settings { top: 8px; right: 8px; }
+  .repository-world .drive-settings summary { padding: 5px 8px; gap: 5px; }
+  .repository-world .drive-settings summary > svg:last-child { display: none; }
+  .repository-world .drive-bottom { padding: 8px; }
+  .repository-world .drive-bottom .btn.icon { width: 42px; height: 42px; }
+  .repository-world .footer { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { .repository-world .btn, .repository-world [data-slot='tabs-trigger'] { transition: none; } }
+
+/* Generated voxel artwork: all labels, statuses and controls remain live HTML. */
+.repository-world {
+  padding: 0 12px 12px;
+  background: #15110e;
+}
+.repository-world .topbar {
+  height: 134px;
+  position: relative;
+  isolation: isolate;
+  padding: 12px 115px 20px;
+  margin: 0 -12px 4px;
+  border: 10px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 14px / 0 stretch;
+  background: #21180f;
+}
+.repository-world .topbar::before, .repository-world .topbar::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  width: 115px;
+  background: url('/art/workshop-header.webp') left 60% / auto 190% no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+.repository-world .topbar::before { left: -10px; }
+.repository-world .topbar::after { right: -10px; background-position: right 60%; }
+.repository-world .brand h1 {
+  font-family: var(--font-road-display), var(--font-geist-mono), monospace;
+  font-weight: 400;
+  font-size: clamp(30px, 3.1vw, 48px);
+  letter-spacing: -2px;
+  text-shadow: 0 2px #b77c34, 0 4px #704419, 2px 6px #1b1008, 3px 7px 3px #000;
+}
+.repository-world .brand-logo { width: 64px; height: 64px; }
+.repository-world .workspace {
+  --view-height: max(570px, calc(100dvh - 210px));
+  grid-template-columns: minmax(0, 1fr) minmax(370px, 28%);
+  gap: 10px;
+}
+.repository-world .drive {
+  border: 0;
+  border-radius: 0;
+  isolation: isolate;
+  box-shadow: none;
+}
+.drive-art-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.repository-world .drive-top { top: 7%; left: 7%; z-index: 2; }
+.repository-world .drive-settings { top: 7%; right: 7%; z-index: 4; }
+.repository-world .drive-bottom { z-index: 2; padding: 0 5% 5%; background: none; pointer-events: none; }
+.repository-world .drive-bottom .actions { pointer-events: auto; }
+.repository-world .repo-panel {
+  border: 14px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 18px / 0 stretch;
+  padding: 6px;
+  box-shadow: none;
+  background: #141311;
+}
+.repository-world .btn,
+.repository-world .repo-panel [data-slot='tabs-trigger'],
+.repository-world .repo-brand-label,
+.repository-world .header-note,
+.repository-world .crossing-status-panel,
+.repository-world .repo-panel .live-chat,
+.repository-world .drive-settings summary,
+.repository-world .chat-sign-in,
+.repository-world .footer {
+  border: 7px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 10px / 0 stretch;
+  background: #171512;
+  box-shadow: 0 3px 6px #0006;
+  border-radius: 0;
+}
+.repository-world .btn.primary,
+.repository-world .place-export .primary,
+.repository-world .repo-panel [data-slot='tabs-trigger'][data-active] {
+  border-image: none;
+  border: 4px ridge #ffd082;
+  background: linear-gradient(115deg, #bf863a, #84531d);
+  box-shadow: inset 0 2px #ffda8a88, inset 0 -3px #5e3518, 0 3px 5px #000;
+}
+.repository-world .btn:hover,
+.repository-world .repo-panel [data-slot='tabs-trigger']:hover { color: #ffcf7a; filter: brightness(1.15); }
+.repository-world .btn:disabled { filter: none; }
+/* Equal tracks and identical border metrics prevent selection from moving tabs. */
+.repository-world .repo-panel [data-slot='tabs-list'] {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding: 0;
+}
+.repository-world .repo-panel .add-method-tabs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: auto;
+  min-height: 48px;
+}
+.repository-world .repo-panel [data-slot='tabs-trigger'],
+.repository-world .repo-panel [data-slot='tabs-trigger'][data-active] {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  border-width: 7px;
+  font-weight: 600;
+  transform: none;
+  transition: color .15s, filter .15s, box-shadow .15s;
+}
+.repository-world .repo-panel [data-slot='tabs-trigger'][data-active] {
+  border-style: solid;
+  border-color: transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 10px / 0 stretch;
+  background: #171512;
+  color: #ffd395;
+  box-shadow: 0 3px 6px #0006;
+}
+.repository-world .repo-panel [data-slot='tabs-trigger'][data-active]::after {
+  inset: auto 24% 3px;
+  height: 2px;
+  width: auto;
+  background: #c99550;
+  opacity: 1;
+}
+.repository-world .repo-panel [data-slot='tabs-trigger'][data-active] svg { color: #ffd27d; }
+.repository-world .repo-panel [data-slot='tabs-trigger']:focus-visible {
+  outline: 2px solid #ffe0a1;
+  outline-offset: 2px;
+}
+.repository-world .repo-panel .add-method-tabs [data-slot='tabs-trigger'] {
+  height: 100%;
+  min-height: 48px;
+  padding: 6px 4px;
+  white-space: normal;
+  line-height: 1.3;
+}
+.repository-world .drive-tag {
+  border: 7px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 10px / 0 stretch;
+  color: #ff655e;
+  box-shadow: inset 0 0 12px #ba35252e, 0 3px 8px #000a;
+}
+.repository-world .chicken-control > .btn { min-height: 80px; }
+.repository-world .repo-panel .live-chat { padding: 12px 10px; }
+.repository-world .crossing-status-panel { padding: 9px 12px; }
+.repository-world .drive-bottom .btn.icon {
+  border: 7px solid transparent;
+  border-image: url('/art/voxel-panel.webp') 100 fill / 10px / 0 stretch;
+  width: 56px;
+  height: 56px;
+}
+.repository-world .chat-sign-in { padding-left: 10px; }
+.repository-world .footer { margin-top: 6px; min-height: 58px; padding: 4px 20px; align-items: center; }
+@media (max-width: 1200px) {
+  .repository-world .topbar { padding-left: 100px; padding-right: 100px; }
+  .repository-world .workspace { grid-template-columns: minmax(0, 1fr) 360px; }
+  .repository-world .repo-panel { border-width: 10px; padding: 5px; }
+}
+@media (max-width: 780px) {
+  .repository-world .topbar { height: 100px; padding: 10px 20px 20px; background-size: cover; }
+  .repository-world .topbar::before, .repository-world .topbar::after { display: none; }
+  .repository-world .brand-logo { width: 42px; height: 42px; }
+  .repository-world .brand h1 { font-size: 27px; }
+  .repository-world .workspace { grid-template-columns: minmax(0, 1fr); }
+  .repository-world .drive { height: auto; aspect-ratio: 16 / 11; }
+  .repository-world .repo-panel { height: 620px; }
+  .repository-world .drive-top { top: 6%; left: 6%; }
+  .repository-world .drive-settings { top: 6%; right: 6%; }
+  .repository-world .drive-settings summary { font-size: 12px; padding: 4px; gap: 4px; }
+  .repository-world .drive-tag { font-size: 12px; padding: 4px; }
+  .repository-world .drive-bottom .btn.icon { width: 42px; height: 42px; }
+  .repository-world .drive-bottom .actions { gap: 6px; }
+  .repository-world .footer { align-items: flex-start; padding: 8px 10px; }
+}

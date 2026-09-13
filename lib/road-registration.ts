@@ -1,5 +1,7 @@
 import { checkPublicStyle, publicRepository } from './repository-categories.ts';
 import type { Repository } from './repositories.ts';
+import { repositoryName } from './repository-address.ts';
+export { repositoryName } from './repository-address.ts';
 
 // Explicitly requested starter registrations. They must pass the same live checks
 // as submissions; missing building files use deterministic default styles.
@@ -8,12 +10,6 @@ export const INITIAL_REGISTRATIONS = ['reporoad/reporoad', 'impresspress/impress
 // Owner-approved exception: read only the reviewed PR commit, never an arbitrary
 // branch/revision supplied through the public submission endpoint.
 const IMPRESSPRESS_REVISION = '023042768f723023262247f592470a4ffc08d323';
-export function repositoryName(value: unknown): string | null {
-  if (typeof value !== 'string' || value.length > 250) return null;
-  const name = value.trim().replace(/^https:\/\/github\.com\//i, '').replace(/^github\.com\//i, '').replace(/\/$/, '');
-  if (!/^[a-z\d](?:[a-z\d-]{0,38})\/[a-z\d_.-]{1,100}$/i.test(name) || ['.', '..'].includes(name.split('/')[1])) return null;
-  return name.toLowerCase();
-}
 export class RegistrationError extends Error {
   status: number;
   constructor(message: string, status = 422) { super(message); this.status = status; }

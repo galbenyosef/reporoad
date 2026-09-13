@@ -5,12 +5,15 @@ import { mayManageRepository } from '@/lib/github-crypto';
 import { repositoryName, verifyRepository, saveRegistration, RegistrationError } from '@/lib/road-registration';
 import { parseBuildingConfig, serializeBuildingConfig } from '@/lib/repositories';
 import { applyWebsiteSettings } from '@/lib/building-settings';
+import { hasRepositoryInstallation } from '@/lib/github-installation';
 export const dynamic='force-dynamic';
 export async function GET(request:Request) {
   const name=repositoryName(new URL(request.url).searchParams.get('repository'));
   if(!name)return Response.json({error:'Enter a public GitHub repository URL.'},{status:400,headers:noStore});
   try {
     const repo=await verifyRepository(name,(env as unknown as {GITHUB_READ_TOKEN?:string}).GITHUB_READ_TOKEN);
+    if(new URL(request.url).searchParams.get('source')==='file')
+      return Response.json({repository:repo,mode:'file'},{headers:noStore});
     const [resolved]=await applyWebsiteSettings(database(),[repo]);
     return Response.json({repository:resolved,mode:resolved.configSource==='website'?'website':'file'},{headers:noStore});
   } catch(error) {return Response.json({error:error instanceof RegistrationError?error.message:'Could not load repository settings.'},{status:503,headers:noStore});}
@@ -35,7 +38,10 @@ export async function POST(request:Request) {
     const identity=await github('/user',user.token) as {id?:number};
     if(identity.id!==user.user_id)return reply('Reconnect GitHub.',401);
     const metadata=await github(`/repos/${name}`,user.token) as {id:number;full_name:string;private:boolean;owner:{id:number};permissions?:{admin?:boolean}};
-    if(repositoryName(metadata.full_name)!==name || !mayManageRepository(metadata,user.user_id))return reply('Only the repository owner or an administrator can save. Install RepoRoad for this repository, then reconnect GitHub.',403);
+    if(repositoryName(metadata.full_name)!==name || metadata.private!==false)return reply('Choose a public repository.',403);
+    if(!await hasRepositoryInstallation(path=>github(path,user.token),metadata.id,metadata.owner.id))
+      return Response.json({error:'Enable RepoRoad for this repository, then continue here.',code:'installation_required'},{status:403,headers:noStore});
+    if(!mayManageRepository(metadata,user.user_id))return reply('Only the repository owner or an administrator can save.',403);
     const repo=await verifyRepository(name,user.token);
     if(repo.githubId!==metadata.id || repo.ownerId!==metadata.owner.id)return reply('Repository changed during verification. Try again.',409);
     await saveRegistration(db,repo);

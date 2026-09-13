@@ -9,7 +9,8 @@ import {
   Maximize,
   Pause,
   Play,
-  Route,
+  Settings2,
+  ChevronRight,
   X,
 } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -43,7 +44,7 @@ export default function RepoRoad() {
   const [dataStatus, setDataStatus] = useState(
     'Loading the shared road…',
   );
-  const [tab, setTab] = useState(() => new URLSearchParams(window.location.search).get('tab') === 'add' ? 'add' : 'chat');
+  const [tab, setTab] = useState(() => new URLSearchParams(window.location.search).get('tab') === 'add' ? 'style' : 'chat');
   const online = usePresence();
   const [mode, setMode] = useState<'live' | 'studio'>(supportPreview ? 'studio' : 'live');
   const [playing, setPlaying] = useState(
@@ -262,6 +263,7 @@ export default function RepoRoad() {
       /></RadioContext.Provider>
       {!broadcast && (
         <>
+          <img className="drive-art-frame" src="/art/drive-frame.webp" alt="" aria-hidden="true" />
           <div className="drive-top">
             <span className="drive-tag" title={synced ? 'Shared live world' : 'Connecting to shared clock'}>
               <span /> {mode === 'live' ? 'LIVE' : 'PREVIEW'}
@@ -342,7 +344,7 @@ export default function RepoRoad() {
       </Dialog>
       <header className="topbar">
         <div className="brand">
-          <Route size={29} />
+          <img src="/reporoad-logo.png" width={64} height={64} alt="" className="brand-logo" />
           <h1>RepoRoad</h1>
           <span className="repo-brand-label">A live lo-fi drive through GitHub.</span>
         </div>
@@ -365,7 +367,7 @@ export default function RepoRoad() {
               setPlaying(true);
             }}>Exit preview</button>
           </div>}
-          <details className="drive-settings"><summary>Drive settings</summary><div className="live-toolbar">
+          <details className="drive-settings"><summary><Settings2 size={19} /><span>Drive settings</span><ChevronRight size={19} /></summary><div className="live-toolbar">
             <div className="actions">
               <button
                 className={`btn ${mode === 'live' ? 'primary' : ''}`}
@@ -457,12 +459,15 @@ export default function RepoRoad() {
               <TabsTrigger value="repositories"><Compass /> Explore</TabsTrigger>
               <TabsTrigger value="style"><Plus /> Add</TabsTrigger>
             </TabsList>
-            <div className="chicken-control">
+            {tab === 'chat' && <div className="chicken-control">
               <button className="btn" disabled={!chickens.schedule} onClick={chickens.add}><img className="chicken-button-icon" src="/icons/chicken.png" width={24} height={24} alt="" aria-hidden="true"/> Add chicken <Plus size={16} /></button>
-              <span>{chickens.queued === null ? 'Connecting…' : `${chickens.queued.toLocaleString()} queued`}{chickens.pending ? ` · +${chickens.pending} sending` : ''}</span>
-              <small>{chickens.crossing ? `${chickens.remaining.toLocaleString()} still to cross · timer starts on green` : chickens.waiting ? 'At the light · syncing crossing…' : `Next light in ${Math.floor(chickens.nextIn / 60)}:${String(chickens.nextIn % 60).padStart(2, '0')}`}</small>
+              <div className="crossing-status-panel">
+                <div><strong>{chickens.queued === null ? 'Connecting…' : `${chickens.queued.toLocaleString()} queued`}{chickens.pending ? ` · +${chickens.pending} sending` : ''}</strong>
+                <small>{chickens.crossing ? `${chickens.remaining.toLocaleString()} still to cross · timer starts on green` : chickens.waiting ? 'At the light · syncing crossing…' : `Next light in ${Math.floor(chickens.nextIn / 60)}:${String(chickens.nextIn % 60).padStart(2, '0')}`}</small></div>
+                <span className="crossing-signal" aria-label={!chickens.schedule ? 'Crossing syncing' : chickens.crossing || chickens.waiting ? 'Red light' : 'Green light'} data-signal={!chickens.schedule ? 'pending' : chickens.crossing || chickens.waiting ? 'red' : 'green'}><i /><i /><i /></span>
+              </div>
               {chickens.error && <small role="status">{chickens.error}</small>}
-            </div>
+            </div>}
             <div className="tab-body">
               {musicError && <p className="notice" role="alert">{musicError}</p>}
               {notice && (
@@ -487,7 +492,7 @@ export default function RepoRoad() {
         </aside>
       </div>
       <footer className="footer">
-        <span>RepoRoad · a cosy world of repositories</span>
+        <span className="footer-brand"><img src="/reporoad-logo.png" width={36} height={36} alt="" /><strong>RepoRoad</strong><span>A cosy world of repositories.</span></span>
         <span>
           Public GitHub data · independent project, not affiliated with GitHub
           or featured repositories
