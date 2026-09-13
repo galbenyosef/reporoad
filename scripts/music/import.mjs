@@ -4,6 +4,8 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createHash } from 'node:crypto';
 const exec = promisify(execFile);
+const exclusions=JSON.parse(await readFile(new URL('./excluded-tracks.json',import.meta.url),'utf8'));
+const excludedSources=new Set(exclusions.tracks.map(track=>track.src));
 const source=resolve(process.argv[2] || '/home/joris/Projects/suppers-ai/lofi-songs/10_hour_versions');
 const target=resolve(process.argv[3] || 'media/music');
 if(source===target || target.startsWith(source+'/'))throw Error('Destination must be outside the source collection');
@@ -20,6 +22,8 @@ const files=(await walk(source)).sort(), tracks=new Array(files.length);
 await mkdir(target,{recursive:true});let cursor=0;
 await Promise.all(Array.from({length:8},async()=>{
   while(cursor<files.length){const index=cursor++,file=files[index],rel=relative(source,file);
+    const src='/music/library/'+rel.split('/').map(encodeURIComponent).join('/');
+    if(excludedSources.has(src))continue;
     const destination=join(target,'library',rel);
     const {stdout}=await exec('ffprobe',['-v','error','-show_entries','format=duration','-of','json',file]);
     const duration=Number(JSON.parse(stdout).format.duration);
@@ -33,9 +37,10 @@ await Promise.all(Array.from({length:8},async()=>{
       if(!a.equals(b))throw Error(`Existing destination differs: ${rel}`);
     }
     tracks[index]={name:basename(rel).replace(/\.mp3$/i,''),collection:rel.split('/')[0].replace(/^\d+_/,'').replaceAll('-',' '),
-      src:'/music/library/'+rel.split('/').map(encodeURIComponent).join('/'),duration,bytes};
+      src,duration,bytes};
   }
 }));
-const version=createHash('sha256').update(JSON.stringify(tracks)).digest('hex').slice(0,16);
-await writeFile(join(target,'catalog.json'),JSON.stringify({version,tracks},null,2)+'\n');
-console.log(JSON.stringify({tracks:tracks.length,bytes:tracks.reduce((s,t)=>s+t.bytes,0),hours:tracks.reduce((s,t)=>s+t.duration,0)/3600,version,target}));
+const activeTracks=tracks.filter(Boolean);
+const version=createHash('sha256').update(JSON.stringify(activeTracks)).digest('hex').slice(0,16);
+await writeFile(join(target,'catalog.json'),JSON.stringify({version,tracks:activeTracks},null,2)+'\n');
+console.log(JSON.stringify({tracks:activeTracks.length,excluded:tracks.length-activeTracks.length,bytes:activeTracks.reduce((s,t)=>s+t.bytes,0),hours:activeTracks.reduce((s,t)=>s+t.duration,0)/3600,version,target}));

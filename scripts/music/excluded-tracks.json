@@ -1,0 +1,1634 @@
+{
+  "reason": "User-approved QC review exclusion; not a confirmed defect. Original MP3s retained.",
+  "report": "outputs/music-qc/full-2026-09-07/findings.json",
+  "tracks": [
+    {
+      "src": "/music/library/034_colombia/Green%20Afternoon_1.mp3",
+      "name": "Green Afternoon_1",
+      "collection": "colombia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/015_japan/Moss%20and%20Rain_1.mp3",
+      "name": "Moss and Rain_1",
+      "collection": "japan",
+      "reasons": [
+        "quiet_section",
+        "quiet_track"
+      ]
+    },
+    {
+      "src": "/music/library/037_georgia/Cable%20Car%20to%20the%20Fortress.mp3",
+      "name": "Cable Car to the Fortress",
+      "collection": "georgia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/013_switzerland/Morning%20in%20the%20Valley.mp3",
+      "name": "Morning in the Valley",
+      "collection": "switzerland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Paper%20and%20Glass_1.mp3",
+      "name": "Paper and Glass_1",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Midnight%20Bay.mp3",
+      "name": "Midnight Bay",
+      "collection": "brazil",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/008_netherlands/Morning%20Mist%20in%20the%20Forest.mp3",
+      "name": "Morning Mist in the Forest",
+      "collection": "netherlands",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Rain%20on%20Banana%20Leaves.mp3",
+      "name": "Rain on Banana Leaves",
+      "collection": "vietnam",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Morning%20Mist%20in%20the%20Foothills_1.mp3",
+      "name": "Morning Mist in the Foothills_1",
+      "collection": "poland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Bamboo%20Rain%20Afternoon.mp3",
+      "name": "Bamboo Rain Afternoon",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Valley%20Thunder.mp3",
+      "name": "Valley Thunder",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/024_germany/Dawn%20Between%20the%20Firs_1.mp3",
+      "name": "Dawn Between the Firs_1",
+      "collection": "germany",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Finnish%20Lake%20Rain.mp3",
+      "name": "Finnish Lake Rain",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/034_colombia/Buenos%20D%C3%ADas.mp3",
+      "name": "Buenos Días",
+      "collection": "colombia",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Midnight%20Valley%20Silence_1.mp3",
+      "name": "Midnight Valley Silence_1",
+      "collection": "poland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/019_portugal/Sea%20Mist%20Over%20Stone_1.mp3",
+      "name": "Sea Mist Over Stone_1",
+      "collection": "portugal",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/007_ireland/Green%20Hills%20at%20Dusk.mp3",
+      "name": "Green Hills at Dusk",
+      "collection": "ireland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/010_scotland/Mist%20Over%20the%20Loch_1.mp3",
+      "name": "Mist Over the Loch_1",
+      "collection": "scotland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/038_south-africa/Goeie%20M%C3%B4re_1.mp3",
+      "name": "Goeie Môre_1",
+      "collection": "south africa",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/First%20Light%20in%20the%20Medina.mp3",
+      "name": "First Light in the Medina",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/041_pakistan/Golden%20Afternoon%20Rain_1.mp3",
+      "name": "Golden Afternoon Rain_1",
+      "collection": "pakistan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/033_kenya/Habari%20za%20Asubuhi.mp3",
+      "name": "Habari za Asubuhi",
+      "collection": "kenya",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Cold%20Tundra.mp3",
+      "name": "Cold Tundra",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/015_japan/Rain%20on%20Ceramic%20Tiles_1.mp3",
+      "name": "Rain on Ceramic Tiles_1",
+      "collection": "japan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Night%20Rain%20on%20Tiled%20Roofs_1.mp3",
+      "name": "Night Rain on Tiled Roofs_1",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/040_ethiopia/Highland%20Silence_1.mp3",
+      "name": "Highland Silence_1",
+      "collection": "ethiopia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Midnight%20Drift_1.mp3",
+      "name": "Midnight Drift_1",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Morning%20Mist%20in%20the%20Foothills.mp3",
+      "name": "Morning Mist in the Foothills",
+      "collection": "poland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Morning%20Rain%20on%20the%20Hearth.mp3",
+      "name": "Morning Rain on the Hearth",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/015_japan/Snow%20on%20the%20Roof.mp3",
+      "name": "Snow on the Roof",
+      "collection": "japan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Morning%20Wharf.mp3",
+      "name": "Morning Wharf",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/027_turkiye/Rain%20on%20Istanbul%20Cobblestones_1.mp3",
+      "name": "Rain on Istanbul Cobblestones_1",
+      "collection": "turkiye",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Blue%20Hour%20Haze_1.mp3",
+      "name": "Blue Hour Haze_1",
+      "collection": "vietnam",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Dawn%20Over%20Guanabara_1.mp3",
+      "name": "Dawn Over Guanabara_1",
+      "collection": "brazil",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Green%20Canopy_1.mp3",
+      "name": "Green Canopy_1",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Rain%20on%20the%20Sauna%20Roof.mp3",
+      "name": "Rain on the Sauna Roof",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/036_czech-republic/Midnight%20Reading.mp3",
+      "name": "Midnight Reading",
+      "collection": "czech republic",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/038_south-africa/Train%20to%20the%20Winelands.mp3",
+      "name": "Train to the Winelands",
+      "collection": "south africa",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/013_switzerland/Rain%20on%20Cobblestone_1.mp3",
+      "name": "Rain on Cobblestone_1",
+      "collection": "switzerland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Paper%20and%20Glass.mp3",
+      "name": "Paper and Glass",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Jacaranda%20Morning.mp3",
+      "name": "Jacaranda Morning",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Midnight%20Drive_1.mp3",
+      "name": "Midnight Drive_1",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/037_georgia/%E1%83%93%E1%83%98%E1%83%9A%E1%83%90%20%E1%83%9B%E1%83%A8%E1%83%95%E1%83%98%E1%83%93%E1%83%9D%E1%83%91%E1%83%98%E1%83%A1%E1%83%90_1.mp3",
+      "name": "დილა მშვიდობისა_1",
+      "collection": "georgia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Stone%20Hearth%20and%20Sea_1.mp3",
+      "name": "Stone Hearth and Sea_1",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/013_switzerland/Morning%20in%20the%20Valley_1.mp3",
+      "name": "Morning in the Valley_1",
+      "collection": "switzerland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/016_canada/Morning%20Mist%20on%20the%20Lake.mp3",
+      "name": "Morning Mist on the Lake",
+      "collection": "canada",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Midnight%20Tea%20Garden.mp3",
+      "name": "Midnight Tea Garden",
+      "collection": "india",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Dawn%20Mist%20on%20the%20Channel.mp3",
+      "name": "Dawn Mist on the Channel",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Midnight%20Bamboo.mp3",
+      "name": "Midnight Bamboo",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Evening%20Rain%20at%20the%20Harbour.mp3",
+      "name": "Evening Rain at the Harbour",
+      "collection": "greece",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/010_scotland/One%20Glowing%20Window.mp3",
+      "name": "One Glowing Window",
+      "collection": "scotland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Morning%20Fig.mp3",
+      "name": "Morning Fig",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Morning%20Fig_1.mp3",
+      "name": "Morning Fig_1",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Midnight%20Drive.mp3",
+      "name": "Midnight Drive",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/024_germany/Rain%20on%20Wooden%20Shingles.mp3",
+      "name": "Rain on Wooden Shingles",
+      "collection": "germany",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Dawn%20Mist%20Over%20the%20Aegean_1.mp3",
+      "name": "Dawn Mist Over the Aegean_1",
+      "collection": "greece",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Hearth%20and%20Rain.mp3",
+      "name": "Hearth and Rain",
+      "collection": "greece",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Green%20Afternoon%20Rain_1.mp3",
+      "name": "Green Afternoon Rain_1",
+      "collection": "vietnam",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Midnight%20Highland%20Silence.mp3",
+      "name": "Midnight Highland Silence",
+      "collection": "vietnam",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Morning%20Mist_1.mp3",
+      "name": "Morning Mist_1",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Blue%20Hour%20Haze.mp3",
+      "name": "Blue Hour Haze",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/013_switzerland/High%20Altitude%20Silence_1.mp3",
+      "name": "High Altitude Silence_1",
+      "collection": "switzerland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Silver%20Lake%20Afternoon_1.mp3",
+      "name": "Silver Lake Afternoon_1",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Rain%20on%20the%20Courtyard_1.mp3",
+      "name": "Rain on the Courtyard_1",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Rain%20on%20Wooden%20Shingles_1.mp3",
+      "name": "Rain on Wooden Shingles_1",
+      "collection": "poland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Evening%20Rain%20Over%20the%20Lake_1.mp3",
+      "name": "Evening Rain Over the Lake_1",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Morning%20Rain%20on%20the%20Cabin_1.mp3",
+      "name": "Morning Rain on the Cabin_1",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Midnight%20Tea%20Garden_1.mp3",
+      "name": "Midnight Tea Garden_1",
+      "collection": "india",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/040_ethiopia/Highland%20Storm_1.mp3",
+      "name": "Highland Storm_1",
+      "collection": "ethiopia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/042_thailand/Rain%20on%20Temple%20Roofs_1.mp3",
+      "name": "Rain on Temple Roofs_1",
+      "collection": "thailand",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/017_iceland/Warm%20Mud_1.mp3",
+      "name": "Warm Mud_1",
+      "collection": "iceland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Midnight%20at%20the%20Jetty.mp3",
+      "name": "Midnight at the Jetty",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Morning%20Rain_1.mp3",
+      "name": "Morning Rain_1",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Paper%20Lanterns.mp3",
+      "name": "Paper Lanterns",
+      "collection": "china",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/033_kenya/Habari%20za%20Asubuhi_1.mp3",
+      "name": "Habari za Asubuhi_1",
+      "collection": "kenya",
+      "reasons": [
+        "quiet_section",
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Dawn%20Mist%20on%20the%20Channel_1.mp3",
+      "name": "Dawn Mist on the Channel_1",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Midnight%20Tram%20Ride.mp3",
+      "name": "Midnight Tram Ride",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Midnight%20Village%20Lane.mp3",
+      "name": "Midnight Village Lane",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Mountain%20Rain%20at%20Night.mp3",
+      "name": "Mountain Rain at Night",
+      "collection": "poland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Allin%20Punchay.mp3",
+      "name": "Allin Punchay",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/034_colombia/Buenos%20D%C3%ADas_1.mp3",
+      "name": "Buenos Días_1",
+      "collection": "colombia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/036_czech-republic/Autumn%20Rain%20on%20the%20Castle.mp3",
+      "name": "Autumn Rain on the Castle",
+      "collection": "czech republic",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/037_georgia/Blue%20Hour%20Haze.mp3",
+      "name": "Blue Hour Haze",
+      "collection": "georgia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/015_japan/Moss%20and%20Rain.mp3",
+      "name": "Moss and Rain",
+      "collection": "japan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Finnish%20Lake%20Rain_1.mp3",
+      "name": "Finnish Lake Rain_1",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Lenga%20Rain.mp3",
+      "name": "Lenga Rain",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Rain%20on%20Inca%20Stone.mp3",
+      "name": "Rain on Inca Stone",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/038_south-africa/Blue%20Hour%20Haze.mp3",
+      "name": "Blue Hour Haze",
+      "collection": "south africa",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/041_pakistan/Midnight%20River_1.mp3",
+      "name": "Midnight River_1",
+      "collection": "pakistan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Cold%20Tundra_1.mp3",
+      "name": "Cold Tundra_1",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Buon%20Giorno.mp3",
+      "name": "Buon Giorno",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Morning%20Rain.mp3",
+      "name": "Morning Rain",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Channel%20Crossing_1.mp3",
+      "name": "Channel Crossing_1",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/005_denmark/Candlelit%20Rain.mp3",
+      "name": "Candlelit Rain",
+      "collection": "denmark",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/005_denmark/Pale%20Mist%20Over%20Cliffs_1.mp3",
+      "name": "Pale Mist Over Cliffs_1",
+      "collection": "denmark",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/016_canada/Morning%20on%20the%20Quay.mp3",
+      "name": "Morning on the Quay",
+      "collection": "canada",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/042_thailand/Rain%20on%20Temple%20Roofs.mp3",
+      "name": "Rain on Temple Roofs",
+      "collection": "thailand",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Morning%20Rain%20on%20Shingles.mp3",
+      "name": "Morning Rain on Shingles",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/007_ireland/After%20Hours%20in%20the%20Stone.mp3",
+      "name": "After Hours in the Stone",
+      "collection": "ireland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Valley%20Thunder_1.mp3",
+      "name": "Valley Thunder_1",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Rain%20on%20Wooden%20Eaves_1.mp3",
+      "name": "Rain on Wooden Eaves_1",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Jacaranda%20Afternoon_1.mp3",
+      "name": "Jacaranda Afternoon_1",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Midnight%20Train%20Ride.mp3",
+      "name": "Midnight Train Ride",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Monsoon%20Afternoon_1.mp3",
+      "name": "Monsoon Afternoon_1",
+      "collection": "india",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/042_thailand/Paper%20Lanterns.mp3",
+      "name": "Paper Lanterns",
+      "collection": "thailand",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Stone%20Hearth%20and%20Sea.mp3",
+      "name": "Stone Hearth and Sea",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Wet%20Wooden%20Walkway.mp3",
+      "name": "Wet Wooden Walkway",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Olive%20Afternoon_1.mp3",
+      "name": "Olive Afternoon_1",
+      "collection": "greece",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/041_pakistan/Wet%20Stone%20Trail_1.mp3",
+      "name": "Wet Stone Trail_1",
+      "collection": "pakistan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Wet%20Wooden%20Walkway_1.mp3",
+      "name": "Wet Wooden Walkway_1",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/016_canada/Rain%20on%20Cobblestones.mp3",
+      "name": "Rain on Cobblestones",
+      "collection": "canada",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/017_iceland/Moss%20and%20Rain_1.mp3",
+      "name": "Moss and Rain_1",
+      "collection": "iceland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Uusi%20P%C3%A4iv%C3%A4.mp3",
+      "name": "Uusi Päivä",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Dusky%20Lane.mp3",
+      "name": "Dusky Lane",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/024_germany/Morning%20Rain%20on%20the%20Desk.mp3",
+      "name": "Morning Rain on the Desk",
+      "collection": "germany",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Midnight%20Harbour.mp3",
+      "name": "Midnight Harbour",
+      "collection": "greece",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Morning%20Rain%20on%20the%20Cabin.mp3",
+      "name": "Morning Rain on the Cabin",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Rain%20on%20the%20Lake.mp3",
+      "name": "Rain on the Lake",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Midnight%20Mountain%20Silence_1.mp3",
+      "name": "Midnight Mountain Silence_1",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/033_kenya/Storm%20Over%20the%20Lake_1.mp3",
+      "name": "Storm Over the Lake_1",
+      "collection": "kenya",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/034_colombia/Wet%20Mountain%20Road_1.mp3",
+      "name": "Wet Mountain Road_1",
+      "collection": "colombia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Midnight%20Bay_1.mp3",
+      "name": "Midnight Bay_1",
+      "collection": "brazil",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Green-Grey%20Afternoon_1.mp3",
+      "name": "Green-Grey Afternoon_1",
+      "collection": "lebanon",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/041_pakistan/Golden%20Afternoon%20Rain.mp3",
+      "name": "Golden Afternoon Rain",
+      "collection": "pakistan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/042_thailand/Tea%20and%20Rain.mp3",
+      "name": "Tea and Rain",
+      "collection": "thailand",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Wet%20Limestone%20Lane_1.mp3",
+      "name": "Wet Limestone Lane_1",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Det%20Lysner.mp3",
+      "name": "Det Lysner",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/017_iceland/Peat%20Fire%20Rain_1.mp3",
+      "name": "Peat Fire Rain_1",
+      "collection": "iceland",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Dust%20on%20the%20Horizon.mp3",
+      "name": "Dust on the Horizon",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Rain%20on%20Mud-Brick.mp3",
+      "name": "Rain on Mud-Brick",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Morning%20Rain%20on%20the%20Sill.mp3",
+      "name": "Morning Rain on the Sill",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Buon%20Giorno_1.mp3",
+      "name": "Buon Giorno_1",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/023_mexico/Dawn%20Over%20the%20Highlands.mp3",
+      "name": "Dawn Over the Highlands",
+      "collection": "mexico",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Evening%20Rain%20Over%20the%20Lake.mp3",
+      "name": "Evening Rain Over the Lake",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/028_argentina/Patagonian%20Afternoon.mp3",
+      "name": "Patagonian Afternoon",
+      "collection": "argentina",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Rain%20on%20Stone%20Paths.mp3",
+      "name": "Rain on Stone Paths",
+      "collection": "india",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Morning%20Rain%20on%20Adobe_1.mp3",
+      "name": "Morning Rain on Adobe_1",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/033_kenya/Midnight%20Valley.mp3",
+      "name": "Midnight Valley",
+      "collection": "kenya",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Blue%20Hour%20Haze_1.mp3",
+      "name": "Blue Hour Haze_1",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/005_denmark/Midnight%20Through%20the.mp3",
+      "name": "Midnight Through the",
+      "collection": "denmark",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/005_denmark/Midnight%20Through%20the_1.mp3",
+      "name": "Midnight Through the_1",
+      "collection": "denmark",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/019_portugal/Morning%20Rain%20on%20Cal%C3%A7ada_1.mp3",
+      "name": "Morning Rain on Calçada_1",
+      "collection": "portugal",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Rain%20on%20Terracotta_1.mp3",
+      "name": "Rain on Terracotta_1",
+      "collection": "italy",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Night%20Train%20Drift_1.mp3",
+      "name": "Night Train Drift_1",
+      "collection": "india",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Night%20Rain%20on%20Tiled%20Roofs.mp3",
+      "name": "Night Rain on Tiled Roofs",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/036_czech-republic/Amber%20Afternoon_1.mp3",
+      "name": "Amber Afternoon_1",
+      "collection": "czech republic",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Midnight%20Harbor%20Silence_1.mp3",
+      "name": "Midnight Harbor Silence_1",
+      "collection": "croatia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Midnight%20Bamboo_1.mp3",
+      "name": "Midnight Bamboo_1",
+      "collection": "south korea",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Dawn%20Mist%20Over%20Black%20Tiles_1.mp3",
+      "name": "Dawn Mist Over Black Tiles_1",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Rain%20on%20Black%20Tiles_1.mp3",
+      "name": "Rain on Black Tiles_1",
+      "collection": "china",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Midnight%20Stone_1.mp3",
+      "name": "Midnight Stone_1",
+      "collection": "lebanon",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/041_pakistan/Wet%20Stone%20Trail.mp3",
+      "name": "Wet Stone Trail",
+      "collection": "pakistan",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Midnight%20Train%20Loop.mp3",
+      "name": "Midnight Train Loop",
+      "collection": "norway",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Rain%20on%20Canvas.mp3",
+      "name": "Rain on Canvas",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_section",
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Evening%20Rain%20Over%20Still%20Lake_1.mp3",
+      "name": "Evening Rain Over Still Lake_1",
+      "collection": "finland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Blue%20Hour%20Haze_1.mp3",
+      "name": "Blue Hour Haze_1",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/Wet%20Stone%20Path_1.mp3",
+      "name": "Wet Stone Path_1",
+      "collection": "peru",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/033_kenya/Dry%20Riverbed_1.mp3",
+      "name": "Dry Riverbed_1",
+      "collection": "kenya",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/034_colombia/Dawn%20Mist_1.mp3",
+      "name": "Dawn Mist_1",
+      "collection": "colombia",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/044_chile/Morning%20Rain%20on%20Shingles_1.mp3",
+      "name": "Morning Rain on Shingles_1",
+      "collection": "chile",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/016_canada/Tin%20Roof%20Rain.mp3",
+      "name": "Tin Roof Rain",
+      "collection": "canada",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/010_scotland/Mist%20Over%20the%20Loch.mp3",
+      "name": "Mist Over the Loch",
+      "collection": "scotland",
+      "reasons": [
+        "quiet_section"
+      ]
+    },
+    {
+      "src": "/music/library/004_australia/Golden%20Hour%20Coast.mp3",
+      "name": "Golden Hour Coast",
+      "collection": "australia",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/013_switzerland/High%20Meadow%20Drift.mp3",
+      "name": "High Meadow Drift",
+      "collection": "switzerland",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Midnight%20Train%20Loop_1.mp3",
+      "name": "Midnight Train Loop_1",
+      "collection": "norway",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/014_norway/Still%20Black%20Water_1.mp3",
+      "name": "Still Black Water_1",
+      "collection": "norway",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/017_iceland/Rain%20on%20the%20Harbour_1.mp3",
+      "name": "Rain on the Harbour_1",
+      "collection": "iceland",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/019_portugal/Afternoon%20in%20the%20Valley.mp3",
+      "name": "Afternoon in the Valley",
+      "collection": "portugal",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/020_finland/Evening%20Rain%20Over%20Still%20Lake.mp3",
+      "name": "Evening Rain Over Still Lake",
+      "collection": "finland",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Evening%20Rain%20in%20the%20Courtyard.mp3",
+      "name": "Evening Rain in the Courtyard",
+      "collection": "italy",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Midnight%20Train%20Blues_1.mp3",
+      "name": "Midnight Train Blues_1",
+      "collection": "italy",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/021_italy/Morning%20Rain_1.mp3",
+      "name": "Morning Rain_1",
+      "collection": "italy",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Seoul%20Rain%20at%20Midnight.mp3",
+      "name": "Seoul Rain at Midnight",
+      "collection": "south korea",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/022_south-korea/Seoul%20Rain%20at%20Midnight_1.mp3",
+      "name": "Seoul Rain at Midnight_1",
+      "collection": "south korea",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/025_greece/Evening%20Rain%20at%20the%20Harbour_1.mp3",
+      "name": "Evening Rain at the Harbour_1",
+      "collection": "greece",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/026_poland/Midnight%20Train%20Ride_1.mp3",
+      "name": "Midnight Train Ride_1",
+      "collection": "poland",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/027_turkiye/Evening%20Rain%20Over%20the_1.mp3",
+      "name": "Evening Rain Over the_1",
+      "collection": "turkiye",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Afternoon%20Mist_1.mp3",
+      "name": "Afternoon Mist_1",
+      "collection": "india",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/029_india/Monsoon%20Blue.mp3",
+      "name": "Monsoon Blue",
+      "collection": "india",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Monsoon%20Afternoon_1.mp3",
+      "name": "Monsoon Afternoon_1",
+      "collection": "vietnam",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/030_vietnam/Rain%20on%20the%20Paddies.mp3",
+      "name": "Rain on the Paddies",
+      "collection": "vietnam",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Bamboo%20Rain%20Afternoon_1.mp3",
+      "name": "Bamboo Rain Afternoon_1",
+      "collection": "china",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/031_china/Paper%20Lanterns_1.mp3",
+      "name": "Paper Lanterns_1",
+      "collection": "china",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/034_colombia/Dawn%20Mist.mp3",
+      "name": "Dawn Mist",
+      "collection": "colombia",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Blue%20Hour%20Haze_1.mp3",
+      "name": "Blue Hour Haze_1",
+      "collection": "brazil",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Yellow%20Tram.mp3",
+      "name": "Yellow Tram",
+      "collection": "brazil",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/035_brazil/Yellow%20Tram_1.mp3",
+      "name": "Yellow Tram_1",
+      "collection": "brazil",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/036_czech-republic/Autumn%20Rain%20on%20the%20Castle_1.mp3",
+      "name": "Autumn Rain on the Castle_1",
+      "collection": "czech republic",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/036_czech-republic/Tram%20to%20the%20Castle.mp3",
+      "name": "Tram to the Castle",
+      "collection": "czech republic",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Blue%20Hour%20Haze_1.mp3",
+      "name": "Blue Hour Haze_1",
+      "collection": "lebanon",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Switchback%20Drive.mp3",
+      "name": "Switchback Drive",
+      "collection": "lebanon",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Switchback%20Drive_1.mp3",
+      "name": "Switchback Drive_1",
+      "collection": "lebanon",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/043_croatia/Silver-Green%20Afternoon_1.mp3",
+      "name": "Silver-Green Afternoon_1",
+      "collection": "croatia",
+      "reasons": [
+        "click_candidate"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Blue%20Hour%20Haze.mp3",
+      "name": "Blue Hour Haze",
+      "collection": "lebanon",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/027_turkiye/Red%20Tile%20Rain_1.mp3",
+      "name": "Red Tile Rain_1",
+      "collection": "turkiye",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/032_peru/High%20Andean%20Rain.mp3",
+      "name": "High Andean Rain",
+      "collection": "peru",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/007_ireland/Until%20Morning_1.mp3",
+      "name": "Until Morning_1",
+      "collection": "ireland",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/015_japan/Bamboo%20and%20Rain.mp3",
+      "name": "Bamboo and Rain",
+      "collection": "japan",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/018_morocco/Salt%20and%20Stone_1.mp3",
+      "name": "Salt and Stone_1",
+      "collection": "morocco",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/039_lebanon/Red%20Tile%20Rain.mp3",
+      "name": "Red Tile Rain",
+      "collection": "lebanon",
+      "reasons": [
+        "quiet_edge"
+      ]
+    },
+    {
+      "src": "/music/library/005_denmark/Candlelit%20Rain_1.mp3",
+      "name": "Candlelit Rain_1",
+      "collection": "denmark",
+      "reasons": [
+        "quiet_edge"
+      ]
+    }
+  ]
+}

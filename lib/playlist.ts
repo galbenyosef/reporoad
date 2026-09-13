@@ -1,4 +1,6 @@
 import { createMusicSchedule, FADE_SECONDS } from './music-schedule.ts';
+import exclusions from '../scripts/music/excluded-tracks.json' with { type: 'json' };
+const excludedSources = new Set(exclusions.tracks.map(track => track.src));
 
 type MusicTrack = { name: string; collection: string; src: string };
 export let PLAYLIST: MusicTrack[] = [];
@@ -20,8 +22,10 @@ export async function loadMusicLibrary(request: typeof fetch = fetch) {
   if (!raw || typeof raw !== 'object') throw Error('Invalid music catalogue');
   const data = raw as { tracks?: unknown };
   if (!Array.isArray(data.tracks) || !data.tracks.length || data.tracks.length > 10000) throw Error('Invalid music catalogue');
-  const tracks = data.tracks as (MusicTrack & {duration: number})[];
-  if (tracks.some(t => !t || typeof t.name !== 'string' || typeof t.collection !== 'string' || typeof t.src !== 'string' || !t.src.startsWith('/music/library/') || !Number.isFinite(t.duration) || t.duration <= 10)) throw Error('Invalid music track');
+  const suppliedTracks = data.tracks as (MusicTrack & {duration: number})[];
+  if (suppliedTracks.some(t => !t || typeof t.name !== 'string' || typeof t.collection !== 'string' || typeof t.src !== 'string' || !t.src.startsWith('/music/library/') || !Number.isFinite(t.duration) || t.duration <= 10)) throw Error('Invalid music track');
+  const tracks = suppliedTracks.filter(track => !excludedSources.has(track.src));
+  if (!tracks.length) throw Error('No playable tracks remain after music quality exclusions.');
   const durations = tracks.map(t => t.duration);
   const nextSchedule = createMusicSchedule(durations);
   PLAYLIST = tracks.map(({name,collection,src}) => ({name,collection,src}));
