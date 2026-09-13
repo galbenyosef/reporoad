@@ -17,6 +17,7 @@ export async function GET(request:Request) {
     const code=url.searchParams.get('code');
     stage='oauth_state_invalid';
     if(!data || !Number.isFinite(data.expires) || data.expires<Date.now() || data.state!==url.searchParams.get('state') || typeof data.verifier!=='string' || !code || code.length>512)throw Error();
+    stage='token_exchange';
     const response=await fetch('https://github.com/login/oauth/access_token',{method:'POST',redirect:'error',signal:AbortSignal.timeout(10000),headers:{Accept:'application/json','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:CLIENT_ID,client_secret:config.client,redirect_uri:CALLBACK,code,code_verifier:data.verifier})});
     stage='token_response';
     const token=await response.json() as {access_token?:string;expires_in?:number};
