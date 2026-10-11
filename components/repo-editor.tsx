@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
+import { GraphicsCanvas } from './graphics-guard';
 import { Slider } from './ui/slider';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
@@ -137,11 +138,11 @@ export default function RepoEditor({ active = true }: { active?: boolean }) {
     <AccordionTrigger><span className="customise-label"><SlidersHorizontal size={18}/> Customise</span></AccordionTrigger>
     <AccordionContent>
     <div className="place-preview" aria-label="Live building preview">
-      {active && customise.includes('customise') && <Canvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [11, 8, 16], fov: 42, near: 0.1, far: 2000 }}>
+      {active && customise.includes('customise') && <GraphicsCanvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [11, 8, 16], fov: 42, near: 0.1, far: 2000 }}>
         <PreviewCamera floors={floors}/>
         <color attach="background" args={['#18221c']}/><ambientLight intensity={1.4}/><directionalLight position={[3, 10, 6]} intensity={3}/>
         <RepositoryBuilding repo={preview} season="Summer"/>
-      </Canvas>}<small>Live preview · {floors} {floors===1?'floor':'floors'}</small>
+      </GraphicsCanvas>}<small>Live preview · {floors} {floors===1?'floor':'floors'}</small>
     </div>
     <label id="preview-floors-label">Preview height · {floors} {floors===1?'floor':'floors'}</label>
     <Slider aria-labelledby="preview-floors-label" min={1} max={50} step={1} value={[floors]} onValueChange={value=>setFloors(Array.isArray(value)?value[0]:value)}/>
