@@ -1,14 +1,13 @@
 'use client';
 
 import {
-  Component,
   memo,
   useEffect,
   useMemo,
   useRef,
   type ReactNode,
 } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { Plot } from '@/lib/world';
 import { vergeModel, shopDetailModel } from '@/lib/voxel-models';
@@ -36,35 +35,13 @@ import {
 } from './living-world';
 import { worldAt, type WorldPreview } from '@/lib/live-world';
 import SceneFinish from './scene-finish';
+import { GraphicsCanvas } from './graphics-guard';
 import RepositoryBuilding from './repository-building';
 import type { Repository } from '@/lib/repositories';
 import { chickenCycle, type CrossingSchedule } from '@/lib/chickens';
 import ChickenCrossing from './chicken-crossing';
 import { dashboardState } from '@/lib/dashboard';
 
-class SceneBoundary extends Component<
-  { children: ReactNode },
-  { failed: boolean }
-> {
-  state = { failed: false };
-  static getDerivedStateFromError() {
-    return { failed: true };
-  }
-  render() {
-    return this.state.failed ? (
-      <div className="scene-fallback">
-        <strong>The 3D view couldn’t start.</strong>
-        <p>
-          Enable hardware acceleration or try another browser.
-          <br />
-          This source needs a browser with working WebGL graphics.
-        </p>
-      </div>
-    ) : (
-      this.props.children
-    );
-  }
-}
 function Box({
   position,
   scale,
@@ -772,9 +749,7 @@ export default function RoadScene(props: {
       className="scene"
       aria-label="A moving 3D road through a voxel town of GitHub repository buildings"
     >
-      <SceneBoundary>
-        <Canvas
-          fallback={<div className="scene-fallback"><strong>RepoRoad needs WebGL to render the drive.</strong><p>This browser source does not provide a compatible 3D renderer.</p></div>}
+        <GraphicsCanvas
           shadows="percentage"
           dpr={[1, 2]}
           camera={{ position: [1.7, 1.9, 7], fov: 68, near: 0.1, far: 500 }}
@@ -786,15 +761,13 @@ export default function RoadScene(props: {
         >
           <World {...props} />
           <SceneFinish />
-        </Canvas>
-      </SceneBoundary>
+        </GraphicsCanvas>
     </figure>
   );
 }
 export function PlotPreview({ plot }: { plot: Plot }) {
   return (
-    <SceneBoundary>
-      <Canvas
+      <GraphicsCanvas
         shadows
         dpr={[1, 1.5]}
         camera={{ position: [11, 8, 14], fov: 40 }}
@@ -804,7 +777,6 @@ export function PlotPreview({ plot }: { plot: Plot }) {
         <ambientLight intensity={1.7} />
         <directionalLight position={[10, 20, 10]} intensity={2} />
         <PlotBuilding plot={plot} />
-      </Canvas>
-    </SceneBoundary>
+      </GraphicsCanvas>
   );
 }

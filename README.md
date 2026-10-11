@@ -139,3 +139,10 @@ Build runs migration checks covering fresh installs, upgrades, retries and data 
 - Review dependency advisories, moderation, rate limits, retention, stream health and music rights before opening to a large audience.
 
 Additional details: [local verification](docs/local-verification.md).
+
+## License
+
+RepoRoad source code is licensed under the [MIT License](LICENSE), copyright
+2026 Suppers Software Limited. Third-party dependencies and separately sourced
+media retain their own licenses. This does not relicense the historical music
+listed in [music provenance](public/music/SOURCES.md).

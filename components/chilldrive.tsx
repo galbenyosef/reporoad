@@ -21,6 +21,7 @@ import {
   NativeSelectOption,
 } from '@/components/ui/native-select';
 import RoadScene from './road-scene';
+import { GraphicsHelp, useGraphicsStatus } from './graphics-guard';
 import LiveChat from './live-chat';
 import { usePresence } from './use-presence';
 import { useChickens } from './use-chickens';
@@ -34,6 +35,7 @@ import { repositoryFloors, type Repository } from '@/lib/repositories';
 import { SAMPLE_ROAD } from '@/lib/road-seed';
 
 export default function RepoRoad() {
+  const graphics = useGraphicsStatus();
   const [supportPreview, setSupportPreview] = useState(() =>
     ['localhost', '127.0.0.1'].includes(window.location.hostname) &&
     new URLSearchParams(window.location.search).get('supportPreview') === '1');
@@ -294,6 +296,7 @@ export default function RepoRoad() {
   if (broadcast)
     return (
       <main className="app broadcast">
+        <GraphicsHelp />
         {scene}
         {musicError && <div className="notice" data-broadcast-error role="alert" style={{ position: 'absolute', bottom: 20, left: 20 }}>{musicError}</div>}
         <aside className="broadcast-crossing" aria-label="Chicken crossing status">
@@ -314,7 +317,8 @@ export default function RepoRoad() {
     );
   return (
     <main className="app repository-world">
-      <Dialog open={welcomeOpen} onOpenChange={setWelcomeOpen}>
+      <GraphicsHelp />
+      <Dialog open={welcomeOpen && !graphics.failure} onOpenChange={setWelcomeOpen}>
         <DialogContent className="welcome-dialog">
           <DialogTitle>Welcome to RepoRoad!</DialogTitle>
           <DialogDescription>Take a cosy drive through GitHub repositories with a little lo-fi music. Say hello in the chat, explore the roadside projects, and send some chickens across the road!</DialogDescription>

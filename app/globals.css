@@ -1216,3 +1216,15 @@ button svg {
 .repo-submit { display: grid; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #514535; }
 .repo-submit label { font-size: 14px; font-weight: 600; }
 .repo-submit p { margin: 0; }
+
+/* Graphics failures stay local to the canvases; the rest of the UI remains usable. */
+.graphics-fallback { gap: 10px; }
+.graphics-fallback .btn { justify-self: center; }
+.place-preview .graphics-fallback { padding: 16px 12px 28px; gap: 5px; font-size: 12px; }
+.place-preview .graphics-fallback p { margin: 0; }
+.graphics-dialog { width: min(560px, calc(100vw - 32px)); max-width: 560px; max-height: calc(100dvh - 32px); overflow-y: auto; }
+.graphics-instructions { display: grid; gap: 12px; line-height: 1.6; }
+.graphics-instructions ol { list-style: decimal; padding-left: 22px; }
+.graphics-instructions li + li { margin-top: 6px; }
+.graphics-instructions code { overflow-wrap: anywhere; }
+.graphics-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
