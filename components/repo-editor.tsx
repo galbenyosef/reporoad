@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
+import { GraphicsCanvas } from './graphics-guard';
 import { Slider } from './ui/slider';
 import { Download, Code2 as Github, Check, Upload } from 'lucide-react';
 import { Input } from './ui/input';
@@ -73,11 +74,11 @@ export default function RepoEditor({ active = true }: { active?: boolean }) {
     <div className="place-load"><Github size={18}/><Input id="load-repo" placeholder="github.com/owner/repo" value={address} onChange={e => setAddress(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') void load(); }}/><button className="btn" disabled={busy} onClick={load}>{busy ? 'Loading…' : 'Load'}</button></div>
     <label className="file-load"><Upload size={13}/> Or open a .reporoad.yml file<input type="file" accept=".yml,.yaml" disabled={busy} onChange={async e => { const file = e.target.files?.[0]; e.target.value = ''; if (!file) return; try { if (file.size > 8192) throw Error('File exceeds 8 KB.'); apply(await file.text()); setMessage('File loaded. Adjust the settings below.'); } catch (error) { setMessage(String(error instanceof Error ? error.message : error)); } }}/></label>
     <div className="place-preview" aria-label="Live building preview">
-      {active && <Canvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [11, 8, 16], fov: 42, near: 0.1, far: 2000 }}>
+      {active && <GraphicsCanvas frameloop="demand" dpr={[1, 1.5]} camera={{ position: [11, 8, 16], fov: 42, near: 0.1, far: 2000 }}>
         <PreviewCamera floors={floors}/>
         <color attach="background" args={['#18221c']}/><ambientLight intensity={1.4}/><directionalLight position={[3, 10, 6]} intensity={3}/>
         <RepositoryBuilding repo={preview} season="Summer"/>
-      </Canvas>}<small>Live preview · {floors} {floors===1?'floor':'floors'}</small>
+      </GraphicsCanvas>}<small>Live preview · {floors} {floors===1?'floor':'floors'}</small>
     </div>
     <label id="preview-floors-label">Preview height · {floors} {floors===1?'floor':'floors'}</label>
     <Slider aria-labelledby="preview-floors-label" min={1} max={50} step={1} value={[floors]} onValueChange={value=>setFloors(Array.isArray(value)?value[0]:value)}/>
